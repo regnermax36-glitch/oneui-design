@@ -90,6 +90,13 @@
         <activity
             android:name="dev.oneuiproject.oneuiexample.activity.SampleAboutActivity" />
 
+        <!-- Music Service for background playback -->
+        <service
+            android:name="com.samsung.android.music.service.MusicService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
     </application>
 
 </manifest>

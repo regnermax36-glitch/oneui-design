@@ -50,6 +50,11 @@ public class SplashActivity extends AppCompatActivity {
         Animation textSlideUp = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
         brandingTextView.startAnimation(textSlideUp);
         
+        // Powered by text animation
+        TextView poweredByText = findViewById(R.id.powered_by_text);
+        Animation poweredByFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
+        poweredByText.startAnimation(poweredByFadeIn);
+        
         // Version text fade in with delay
         Animation versionFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_fade_in_delayed);
         versionTextView.startAnimation(versionFadeIn);
@@ -57,7 +62,7 @@ public class SplashActivity extends AppCompatActivity {
     
     private void scheduleMainActivity() {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            Intent intent = new Intent(SplashActivity.this, com.samsung.android.music.activity.MainActivity.class);
             startActivity(intent);
             finish();
             
