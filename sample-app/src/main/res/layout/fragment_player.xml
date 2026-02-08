@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/player_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- Album Art with Glassy Effect -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="12dp"
+            android:background="@drawable/glassy_card_background">
+
+            <ImageView
+                android:id="@+id/album_art"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_album_art"
+                android:contentDescription="Album Art" />
+
+            <!-- Glassy overlay on album art -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/glass_overlay"
+                android:alpha="0.2" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Song Information -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/song_title"
+                style="@style/SongTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown_album"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/artist_name"
+                style="@style/ArtistNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown_artist"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Progress Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp">
+
+            <!-- Seek Bar -->
+            <SeekBar
+                android:id="@+id/seek_bar"
+                style="@style/PlayerSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:max="100"
+                android:progress="0" />
+
+            <!-- Time Labels -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/current_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0:00"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="sec-roboto-light" />
+
+                <TextView
+                    android:id="@+id/total_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0:00"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="sec-roboto-light"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Control Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Shuffle Button -->
+            <ImageButton
+                android:id="@+id/btn_shuffle"
+                style="@style/PlayerControlButton"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_shuffle"
+                android:contentDescription="@string/shuffle"
+                android:alpha="0.6" />
+
+            <!-- Previous Button -->
+            <ImageButton
+                android:id="@+id/btn_previous"
+                style="@style/PlayerControlButton"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_skip_previous"
+                android:contentDescription="@string/previous" />
+
+            <!-- Play/Pause Button (Larger) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="8dp"
+                android:background="@drawable/glassy_card_background">
+
+                <ImageButton
+                    android:id="@+id/btn_play_pause"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/glassy_button_background"
+                    android:src="@drawable/ic_play"
+                    android:contentDescription="@string/play"
+                    android:scaleType="centerInside" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Next Button -->
+            <ImageButton
+                android:id="@+id/btn_next"
+                style="@style/PlayerControlButton"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_skip_next"
+                android:contentDescription="@string/next" />
+
+            <!-- Repeat Button -->
+            <ImageButton
+                android:id="@+id/btn_repeat"
+                style="@style/PlayerControlButton"
+                android:src="@drawable/ic_repeat"
+                android:contentDescription="@string/repeat"
+                android:alpha="0.6" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

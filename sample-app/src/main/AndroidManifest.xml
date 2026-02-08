@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sec.sesl.tester">
+    package="com.samsung.android.music">
 
+    <!-- Music Player Permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
 
@@ -11,11 +18,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/OneUITheme">
+        android:theme="@style/SamsungMusicTheme">
 
+        <!-- Samsung One UI 10.0 Metadata -->
         <meta-data
             android:name="SamsungBasicInteraction"
-            android:value="SEP10" />
+            android:value="SEP11" />
 
         <meta-data
             android:name="com.samsung.android.icon_container.has_icon_container"
@@ -24,19 +32,43 @@
             android:name="com.samsung.android.icon_container.feature_appicon"
             android:value="ADAPTIVEICON_SHADOW" />
 
+        <!-- One UI 10.0 Theming -->
         <meta-data
             android:name="theming-meta"
-            android:value="meta_998_sesl_app" />
+            android:value="samsung_music_player" />
 
         <meta-data
             android:name="theming-meta-xml"
-            android:value="@xml/meta_998_sesl_app" />
+            android:value="@xml/samsung_music_theming" />
 
+        <!-- Samsung Music Player Metadata -->
+        <meta-data
+            android:name="com.samsung.android.music.version"
+            android:value="10.0" />
+        
+        <meta-data
+            android:name="com.samsung.android.music.glassy_ui"
+            android:value="true" />
+
+        <!-- Samsung Music Player Splash Screen -->
         <activity
-            android:name="dev.oneuiproject.oneuiexample.activity.MainActivity"
+            android:name="com.samsung.android.music.activity.SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Music Player Activity -->
+        <activity
+            android:name="com.samsung.android.music.activity.MainActivity"
             android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize"
             android:launchMode="singleTop"
-            android:exported="true">
+            android:exported="false">
 
             <meta-data
                 android:name="com.sec.android.app.launcher.icon_theme"
@@ -47,9 +79,7 @@
                 android:resource="@xml/searchable" />
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEARCH" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

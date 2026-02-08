@@ -3,4 +3,36 @@
 
     <color name="about_page_secondary_text_color">#ff8c8c8c</color>
 
+    <!-- Samsung One UI 10.0 Colors -->
+    <color name="samsung_blue">#1976D2</color>
+    <color name="samsung_blue_dark">#0D47A1</color>
+    <color name="samsung_blue_light">#42A5F5</color>
+    
+    <!-- Glassy UI Colors -->
+    <color name="glass_background">#80FFFFFF</color>
+    <color name="glass_background_dark">#80000000</color>
+    <color name="glass_surface">#B3FFFFFF</color>
+    <color name="glass_surface_dark">#B3121212</color>
+    <color name="glass_overlay">#40FFFFFF</color>
+    <color name="glass_overlay_dark">#40000000</color>
+    
+    <!-- Music Player Colors -->
+    <color name="player_background">#F5F5F5</color>
+    <color name="player_background_dark">#121212</color>
+    <color name="player_surface">#FFFFFF</color>
+    <color name="player_surface_dark">#1E1E1E</color>
+    <color name="player_accent">#1976D2</color>
+    <color name="player_accent_variant">#3F51B5</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#DE000000</color>
+    <color name="text_primary_dark">#DEFFFFFF</color>
+    <color name="text_secondary">#99000000</color>
+    <color name="text_secondary_dark">#99FFFFFF</color>
+    
+    <!-- Control Colors -->
+    <color name="control_normal">#757575</color>
+    <color name="control_activated">#1976D2</color>
+    <color name="control_disabled">#BDBDBD</color>
+
 </resources>
