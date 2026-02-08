@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.sec.sesl.tester.R;
+import com.samsung.android.music.R;
 
 /**
  * Samsung Music Player Splash Screen with One UI 10.0 Design

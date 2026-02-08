@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sec.sesl.tester.R;
+import com.samsung.android.music.R;
 import com.samsung.android.music.fragment.PlayerFragment;
 import com.samsung.android.music.fragment.LibraryFragment;
 
@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
     private void checkPermissions() {
         String[] permissions;
         
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        if (Build.VERSION.SDK_INT >= 33) {
             permissions = new String[] {
-                Manifest.permission.READ_MEDIA_AUDIO,
-                Manifest.permission.POST_NOTIFICATIONS
+                "android.permission.READ_MEDIA_AUDIO",
+                "android.permission.POST_NOTIFICATIONS"
             };
         } else {
             permissions = new String[] {

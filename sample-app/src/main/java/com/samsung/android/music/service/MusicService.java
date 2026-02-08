@@ -14,7 +14,7 @@ import android.os.PowerManager;
 
 import androidx.core.app.NotificationCompat;
 
-import com.sec.sesl.tester.R;
+import com.samsung.android.music.R;
 import com.samsung.android.music.activity.MainActivity;
 import com.samsung.android.music.model.Song;
 

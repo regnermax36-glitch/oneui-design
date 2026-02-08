@@ -5,4 +5,36 @@
 
     <style name="BottomNavViewTextMode" parent="Widget.Design.Light.BottomNavigationView.Text" />
 
+    <!-- Samsung Music Player Styles -->
+    <style name="SongTitleText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sec-roboto-medium</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ArtistNameText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sec-roboto-light</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="PlayerSeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+        <item name="android:minHeight">4dp</item>
+        <item name="android:maxHeight">4dp</item>
+    </style>
+
+    <style name="PlayerControlButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/player_control_background</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
 </resources>

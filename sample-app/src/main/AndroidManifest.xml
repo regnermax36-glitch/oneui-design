@@ -23,7 +23,8 @@
         <!-- Samsung One UI 10.0 Metadata -->
         <meta-data
             android:name="SamsungBasicInteraction"
-            android:value="SEP11" />
+            android:value="SEP11"
+            tools:replace="android:value" />
 
         <meta-data
             android:name="com.samsung.android.icon_container.has_icon_container"
@@ -83,12 +84,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="dev.oneuiproject.oneuiexample.activity.AboutActivity"
-            android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" />
 
-        <activity
-            android:name="dev.oneuiproject.oneuiexample.activity.SampleAboutActivity" />
 
         <!-- Music Service for background playback -->
         <service

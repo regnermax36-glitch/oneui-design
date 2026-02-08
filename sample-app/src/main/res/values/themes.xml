@@ -2,13 +2,13 @@
 <resources>
     
     <!-- Samsung Music Player One UI 10.0 Theme -->
-    <style name="SamsungMusicTheme" parent="OneUITheme">
+    <style name="SamsungMusicTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/samsung_blue</item>
         <item name="colorPrimaryVariant">@color/samsung_blue_dark</item>
         <item name="colorSecondary">@color/samsung_blue_light</item>
         <item name="colorSecondaryVariant">@color/player_accent_variant</item>
         <item name="colorSurface">@color/player_surface</item>
-        <item name="colorBackground">@color/player_background</item>
+        <item name="android:colorBackground">@color/player_background</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnSecondary">@android:color/white</item>
         <item name="colorOnSurface">@color/text_primary</item>
@@ -33,45 +33,14 @@
         <item name="cardElevation">8dp</item>
     </style>
     
-    <style name="GlassyButtonStyle" parent="Widget.Material3.Button">
+    <style name="GlassyButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/glassy_button_background</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:elevation">4dp</item>
         <item name="cornerRadius">12dp</item>
     </style>
     
-    <!-- Music Player Specific Styles -->
-    <style name="PlayerControlButton">
-        <item name="android:background">@drawable/player_control_background</item>
-        <item name="android:layout_width">56dp</item>
-        <item name="android:layout_height">56dp</item>
-        <item name="android:scaleType">centerInside</item>
-        <item name="android:elevation">4dp</item>
-    </style>
-    
-    <style name="PlayerSeekBar" parent="Widget.AppCompat.SeekBar">
-        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
-        <item name="android:thumb">@drawable/seekbar_thumb</item>
-        <item name="android:progressTint">@color/samsung_blue</item>
-        <item name="android:progressBackgroundTint">@color/glass_overlay</item>
-    </style>
-    
-    <!-- Text Styles -->
-    <style name="SongTitleText">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/text_primary</item>
-        <item name="android:fontFamily">sec-roboto-light</item>
-        <item name="android:maxLines">2</item>
-        <item name="android:ellipsize">end</item>
-    </style>
-    
-    <style name="ArtistNameText">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/text_secondary</item>
-        <item name="android:fontFamily">sec-roboto-light</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
-    </style>
+
     
     <!-- Splash Screen Theme -->
     <style name="SplashTheme" parent="SamsungMusicTheme">
