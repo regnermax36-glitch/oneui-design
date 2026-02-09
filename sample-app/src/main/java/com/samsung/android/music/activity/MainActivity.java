@@ -50,8 +50,17 @@ public class MainActivity extends AppCompatActivity {
     }
     
     private void initializeViews() {
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        fragmentManager = getSupportFragmentManager();
+        try {
+            bottomNavigation = findViewById(R.id.bottom_navigation);
+            fragmentManager = getSupportFragmentManager();
+            
+            if (bottomNavigation == null) {
+                throw new RuntimeException("Bottom navigation not found");
+            }
+        } catch (Exception e) {
+            // Log error and finish activity
+            finish();
+        }
     }
     
     private void checkPermissions() {

@@ -59,25 +59,43 @@ public class PlayerFragment extends Fragment {
     }
     
     private void initializeViews(View view) {
-        albumArtImageView = view.findViewById(R.id.album_art);
-        songTitleTextView = view.findViewById(R.id.song_title);
-        artistNameTextView = view.findViewById(R.id.artist_name);
-        currentTimeTextView = view.findViewById(R.id.current_time);
-        totalTimeTextView = view.findViewById(R.id.total_time);
-        seekBar = view.findViewById(R.id.seek_bar);
-        previousButton = view.findViewById(R.id.btn_previous);
-        playPauseButton = view.findViewById(R.id.btn_play_pause);
-        nextButton = view.findViewById(R.id.btn_next);
-        shuffleButton = view.findViewById(R.id.btn_shuffle);
-        repeatButton = view.findViewById(R.id.btn_repeat);
+        try {
+            albumArtImageView = view.findViewById(R.id.album_art);
+            songTitleTextView = view.findViewById(R.id.song_title);
+            artistNameTextView = view.findViewById(R.id.artist_name);
+            currentTimeTextView = view.findViewById(R.id.current_time);
+            totalTimeTextView = view.findViewById(R.id.total_time);
+            seekBar = view.findViewById(R.id.seek_bar);
+            previousButton = view.findViewById(R.id.btn_previous);
+            playPauseButton = view.findViewById(R.id.btn_play_pause);
+            nextButton = view.findViewById(R.id.btn_next);
+            shuffleButton = view.findViewById(R.id.btn_shuffle);
+            repeatButton = view.findViewById(R.id.btn_repeat);
+        } catch (Exception e) {
+            // Handle view initialization error
+        }
     }
     
     private void setupClickListeners() {
-        playPauseButton.setOnClickListener(v -> togglePlayPause());
-        previousButton.setOnClickListener(v -> playPrevious());
-        nextButton.setOnClickListener(v -> playNext());
-        shuffleButton.setOnClickListener(v -> toggleShuffle());
-        repeatButton.setOnClickListener(v -> toggleRepeat());
+        try {
+            if (playPauseButton != null) {
+                playPauseButton.setOnClickListener(v -> togglePlayPause());
+            }
+            if (previousButton != null) {
+                previousButton.setOnClickListener(v -> playPrevious());
+            }
+            if (nextButton != null) {
+                nextButton.setOnClickListener(v -> playNext());
+            }
+            if (shuffleButton != null) {
+                shuffleButton.setOnClickListener(v -> toggleShuffle());
+            }
+            if (repeatButton != null) {
+                repeatButton.setOnClickListener(v -> toggleRepeat());
+            }
+        } catch (Exception e) {
+            // Handle click listener setup error
+        }
     }
     
     private void setupSeekBar() {

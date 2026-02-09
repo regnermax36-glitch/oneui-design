@@ -42,22 +42,34 @@ public class SplashActivity extends AppCompatActivity {
     }
     
     private void startAnimations() {
-        // Logo fade in animation
-        Animation logoFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_fade_in);
-        logoImageView.startAnimation(logoFadeIn);
-        
-        // Branding text slide up animation
-        Animation textSlideUp = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
-        brandingTextView.startAnimation(textSlideUp);
-        
-        // Powered by text animation
-        TextView poweredByText = findViewById(R.id.powered_by_text);
-        Animation poweredByFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
-        poweredByText.startAnimation(poweredByFadeIn);
-        
-        // Version text fade in with delay
-        Animation versionFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_fade_in_delayed);
-        versionTextView.startAnimation(versionFadeIn);
+        try {
+            // Logo fade in animation
+            if (logoImageView != null) {
+                Animation logoFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_fade_in);
+                logoImageView.startAnimation(logoFadeIn);
+            }
+            
+            // Branding text slide up animation
+            if (brandingTextView != null) {
+                Animation textSlideUp = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
+                brandingTextView.startAnimation(textSlideUp);
+            }
+            
+            // Powered by text animation
+            TextView poweredByText = findViewById(R.id.powered_by_text);
+            if (poweredByText != null) {
+                Animation poweredByFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_slide_up);
+                poweredByText.startAnimation(poweredByFadeIn);
+            }
+            
+            // Version text fade in with delay
+            if (versionTextView != null) {
+                Animation versionFadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_fade_in_delayed);
+                versionTextView.startAnimation(versionFadeIn);
+            }
+        } catch (Exception e) {
+            // Skip animations if there's an issue
+        }
     }
     
     private void scheduleMainActivity() {
