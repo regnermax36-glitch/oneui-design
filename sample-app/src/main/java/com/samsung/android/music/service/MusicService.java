@@ -18,6 +18,9 @@ import com.samsung.android.music.R;
 import com.samsung.android.music.activity.MainActivity;
 import com.samsung.android.music.model.Song;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Background music playback service for Samsung Music Player
  * Handles audio playback with proper lifecycle management
@@ -225,6 +228,53 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     private void updateNotification() {
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(NOTIFICATION_ID, createNotification());
+    }
+    
+    // Additional methods for playlist management
+    private List<Song> playlist = new ArrayList<>();
+    private int currentIndex = -1;
+    
+    public void setPlaylist(List<Song> songs, int startIndex) {
+        this.playlist = new ArrayList<>(songs);
+        this.currentIndex = startIndex;
+        
+        if (startIndex >= 0 && startIndex < playlist.size()) {
+            playSong(playlist.get(startIndex));
+        }
+    }
+    
+    public List<Song> getPlaylist() {
+        return new ArrayList<>(playlist);
+    }
+    
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+    
+    public void playNext() {
+        if (playlist.isEmpty()) return;
+        
+        currentIndex++;
+        if (currentIndex >= playlist.size()) {
+            currentIndex = 0; // Loop back to start
+        }
+        
+        if (currentIndex < playlist.size()) {
+            playSong(playlist.get(currentIndex));
+        }
+    }
+    
+    public void playPrevious() {
+        if (playlist.isEmpty()) return;
+        
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = playlist.size() - 1; // Loop to end
+        }
+        
+        if (currentIndex >= 0 && currentIndex < playlist.size()) {
+            playSong(playlist.get(currentIndex));
+        }
     }
     
     @Override
