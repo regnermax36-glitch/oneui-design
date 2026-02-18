@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<theming-meta xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Samsung Music Player One UI 10.0 Theming Configuration -->
+    <theme-config>
+        <primary-color>#1976D2</primary-color>
+        <accent-color>#42A5F5</accent-color>
+        <background-color>#F5F5F5</background-color>
+        <surface-color>#FFFFFF</surface-color>
+        <text-primary-color>#DE000000</text-primary-color>
+        <text-secondary-color>#99000000</text-secondary-color>
+    </theme-config>
+    
+    <!-- Dark Mode Configuration -->
+    <dark-theme-config>
+        <primary-color>#42A5F5</primary-color>
+        <accent-color>#1976D2</accent-color>
+        <background-color>#121212</background-color>
+        <surface-color>#1E1E1E</surface-color>
+        <text-primary-color>#DEFFFFFF</text-primary-color>
+        <text-secondary-color>#99FFFFFF</text-secondary-color>
+    </dark-theme-config>
+    
+    <!-- Samsung One UI 10.0 Specific Settings -->
+    <oneui-settings>
+        <version>10.0</version>
+        <glassy-effects>true</glassy-effects>
+        <rounded-corners>true</rounded-corners>
+        <dynamic-colors>true</dynamic-colors>
+    </oneui-settings>
+    
+</theming-meta>

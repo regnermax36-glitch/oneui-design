@@ -12,21 +12,27 @@ android {
     compileSdk target_sdk
 
     defaultConfig {
-        // Use Samsung internal package name to enable theming.
-        applicationId "com.sec.sesl.tester"
+        // Samsung Music Player package name
+        applicationId "com.samsung.android.music"
 
         minSdk 23
         targetSdk target_sdk
 
-        versionCode sample_version_code
-        versionName sample_version_name
+        versionCode 100
+        versionName "10.0.0"
 
         vectorDrawables.useSupportLibrary = true
+        
+        // Samsung Music Player specific config
+        manifestPlaceholders = [
+            appName: "Samsung Music Player"
+        ]
     }
 
     buildFeatures {
         buildConfig true
-        viewBinding true
+        viewBinding false
+        dataBinding false
     }
 
     buildTypes {

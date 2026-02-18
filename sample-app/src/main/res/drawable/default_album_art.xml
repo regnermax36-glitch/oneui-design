@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+    
+    <!-- Background gradient -->
+    <path
+        android:pathData="M0,0h280v280H0z"
+        android:fillColor="@color/glass_background" />
+    
+    <!-- Music note icon -->
+    <path
+        android:fillColor="@color/samsung_blue"
+        android:pathData="M140,70c-38.66,0 -70,31.34 -70,70s31.34,70 70,70s70,-31.34 70,-70S178.66,70 140,70zM165,155c0,2.21 -1.79,4 -4,4h-8v8c0,2.21 -1.79,4 -4,4s-4,-1.79 -4,-4v-8h-10v8c0,2.21 -1.79,4 -4,4s-4,-1.79 -4,-4v-8h-8c-2.21,0 -4,-1.79 -4,-4s1.79,-4 4,-4h8v-10h-8c-2.21,0 -4,-1.79 -4,-4s1.79,-4 4,-4h8v-8c0,-2.21 1.79,-4 4,-4s4,1.79 4,4v8h10v-8c0,-2.21 1.79,-4 4,-4s4,1.79 4,4v8h8c2.21,0 4,1.79 4,4s-1.79,4 -4,4h-8v10h8c2.21,0 4,1.79 4,4z" />
+
+</vector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:id="@+id/nav_player"
+        android:icon="@drawable/ic_play_circle"
+        android:title="@string/now_playing" />
+    
+    <item
+        android:id="@+id/nav_library"
+        android:icon="@drawable/ic_library_music"
+        android:title="@string/library" />
+
+</menu>
